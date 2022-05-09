@@ -11,7 +11,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-      vue(),
+    vue(),
     vueSetupExtend(),
     legacy({
       targets: ['defaults', 'not IE 11'],
@@ -22,27 +22,27 @@ export default defineConfig({
       disable: false, // 是否禁用
       threshold: 10240, // 文件容量大于这个值进行压缩，它将被压缩，单位为b
       algorithm: 'gzip', // 压缩算法 可选 ['gzip','brotliCompress' ,'deflate','deflateRaw']
-      ext: '.gz', // 生成的压缩包后缀
+      ext: '.gz' // 生成的压缩包后缀
     }),
     viteImagemin({
       gifsicle: {
         optimizationLevel: 7,
-        interlaced: false,
+        interlaced: false
       },
       optipng: {
-        optimizationLevel: 7,
+        optimizationLevel: 7
       },
       mozjpeg: {
-        quality: 20,
+        quality: 20
       },
       pngquant: {
         quality: [0.8, 0.9],
-        speed: 4,
+        speed: 4
       },
       svgo: {
         plugins: [
           {
-            name: 'removeViewBox',
+            name: 'removeViewBox'
           },
           {
             name: 'removeEmptyAttrs',
@@ -58,7 +58,7 @@ export default defineConfig({
       extensions: ['vue'],
       // 允许子目录作为组件的命名空间前缀。
       directoryAsNamespace: false,
-      deep: true,
+      deep: true
     }),
     createStyleImportPlugin({ resolves: [VantResolve()] }),
     AutoImport({
@@ -121,8 +121,8 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             return 'vendor' //代码分割为第三方包
           }
-        },
-      },
+        }
+      }
     },
     terserOptions: {
       // 打包后移除console和注释
@@ -130,8 +130,8 @@ export default defineConfig({
         keep_infinity: true,
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info'],
-      },
+        pure_funcs: ['console.log', 'console.info']
+      }
     },
     /**
      * 类型： boolean
@@ -144,6 +144,6 @@ export default defineConfig({
      * 默认: 500
      * chunk 大小警告的限制（以 kbs 为单位）。
      */
-    chunkSizeWarningLimit: 2000,
+    chunkSizeWarningLimit: 2000
   }
 })

@@ -52,14 +52,21 @@ module.exports = {
   ],
   plugins: ['vue'],
   rules: {
+    semi: [2, 'never'],
+    'prettier/prettier': [
+      'error',
+      {
+        semi: false
+      }
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 1 : 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 1 : 0,
     eqeqeq: 2, // 要求使用 === 和 !==
     'vue/eqeqeq': 2, // 要求使用 === 和 !==
     'no-undef': 2, // 禁用未声明的变量
     'vue/require-v-for-key': 1, // 当v-for写在自定义组件上时，它需要同时使用v-bind：key。在其他元素上，v-bind：key也最好写。
-    'no-unused-vars': 0, // 禁止出现未使用过的变量
-    'vars-on-top': 0, // 要求所有的 var 声明出现在它们所在的作用域顶部
+    'no-unused-vars': 1, // 禁止出现未使用过的变量
+    'vars-on-top': 1, // 要求所有的 var 声明出现在它们所在的作用域顶部
     'prefer-destructuring': 0, // 优先使用数组和对象解构
     'no-useless-concat': 1, // 禁止不必要的字符串字面量或模板字面量的连接
     'no-useless-escape': 0, // 禁止不必要的转义字符
@@ -125,4 +132,4 @@ module.exports = {
       }
     }
   ]
-};
+}

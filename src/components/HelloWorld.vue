@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { reactive, ref, toRefs } from 'vue';
+import { reactive, ref, toRefs } from 'vue'
 
-defineProps<{ msg: string }>();
-const count = ref(0);
+defineProps<{ msg: string }>()
+const count = ref(0)
+const count2 = ref(0)
 const state = reactive({
   data: '321'
-});
-const { data } = toRefs(state);
+})
+const { data } = toRefs(state)
 </script>
 
 <template>
