@@ -3,7 +3,7 @@ import { UserStore } from '../store/user'
 import { computed } from 'vue'
 const user = UserStore()
 const count = computed(() => {
-  return user.getCount
+  return user.count
 })
 </script>
 
